@@ -1,0 +1,936 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>FinFuse</title>
+        <style>
+            body {
+                justify-content: center;
+                align-items: center; 
+                font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+                font-size: 18px;
+                
+            }
+            .container {
+                display: flex;
+                justify-content: space-between;
+                align-items: flex-start;
+                width: 100%;
+                margin-bottom: 50px;
+            }
+            .item {
+                padding: 10px;
+                font-size: 20px;
+                font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;      
+            }
+            .logo {
+                width: 40px;
+                height: auto;
+                margin-right: 10px;
+            }
+            
+            body, h2, h3, p, a, button {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            
+        }
+ /* General Reset */
+* {
+    
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Top Navigation Bar */
+.top-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #2a2a2a;
+    color: #ffffff;
+    font-family: Arial, sans-serif;
+}
+
+/* Logo and Title */
+.logo-title {
+    display: flex;
+    align-items: center;
+}
+
+.logo-title img {
+    width: 40px;
+    height: auto;
+    margin-right: 10px;
+}
+
+.logo-title h2 {
+    font-size: 1.5em;
+    font-weight: 700;
+    color: #ffffff;
+}
+
+/* Center Menu Links */
+.nav-links {
+    display: flex;
+    gap: 20px;
+}
+
+.nav-links a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 1em;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: yellow;
+}
+
+/* Dropdown Menu */
+.dropdown {
+    position: relative;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #333333;
+    padding: 10px;
+    top: 100%;
+    left: 0;
+    border-radius: 5px;
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: #ffffff;
+    text-decoration: none;
+    display: block;
+    padding: 5px 10px;
+    transition: background-color 0.3s;
+}
+
+.dropdown-content a:hover {
+    background-color: yellow;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* Login & Signup Buttons */
+.login-signup {
+    display: flex;
+    gap: 10px;
+}
+
+.login-btn,
+.signup-btn {
+    background-color: yellow;
+    border: none;
+    color: black;
+    padding: 8px 16px;
+    font-size: 0.9em;
+    font-weight: 600;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.login-btn:hover,
+.signup-btn:hover {
+    background-color: yellow;
+}
+
+/* Header Main Content */
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 40px 20px;
+    background-color: #f5f5f5;
+}
+
+.header-content {
+    max-width: 50%;
+}
+
+.header-content h3 {
+    font-size: 1.2em;
+    color: yellow;
+    margin-bottom: 10px;
+}
+
+.header-content h2 {
+    font-size: 2.5em;
+    color: #333333;
+    line-height: 1.2;
+}
+
+.header-content h2 span {
+    color: yellow;
+}
+
+.header-content p {
+    margin-top: 15px;
+    font-size: 1em;
+    color: #555555;
+    line-height: 1.5;
+}
+
+.get-started-btn {
+    margin-top: 20px;
+    background-color: yellow;
+    border: none;
+    color: black;
+    padding: 10px 20px;
+    font-size: 1em;
+    font-weight: 600;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.get-started-btn:hover {
+    background-color: yellow;
+}
+
+/* Right Side Image */
+.header-image {
+    max-width: 45%;
+}
+
+.header-image img {
+    border-radius: 10px;
+    max-width: 100%;
+    height: auto;
+}
+
+      
+            .statistics-section {
+                display: flex;
+                justify-content: space-between;
+                margin-top: 80px;
+                margin-bottom: 50px;
+            }
+            .statistics-item {
+                display: flex;  
+                flex-direction: column;
+                align-items: center;
+                position: relative;
+                text-align: center;
+            }
+            .statistics-item h2 {
+                text-align: center;
+                font-size: 24px;
+                margin-left: 50px;
+                width: 100%;
+            }
+            .statistics-box {
+                background-color: rgba(248, 245, 245,);
+                border: 1px solid #ccc;
+                border-radius: 8px;
+                padding: 60px 20px 20px;
+                width: 285px;
+                height: 185px;
+                position: relative;
+            }
+            .statistics-box .top-button {
+                position: absolute;
+                top: 10px;
+                left: 50%;
+                transform: translateX(-50%);
+                background-color: yellow;
+                color: rgb(14, 13, 13);
+                padding: 10px;
+                border: none;
+                border-radius: 5px;
+                cursor: pointer;
+                width: fit-content;
+                text-align: center;
+                text-decoration: none;
+                margin-top: 0px;
+            }
+            .statistics-box .top-button:hover {
+                background-color: azure;
+            }    
+            .statistics-box .description {
+                margin: 10px 0;
+            }
+            .statistics-box .create-account {
+                background-color: rgb(248, 245, 245);
+                padding: 10px;
+                border-radius: 5px;
+                text-align: center;
+                margin-top: 1px;
+            }
+            .button {
+                display: block;
+                background-color: rgb(1, 51, 1);
+                color: white;
+                padding: 10px;
+                text-align: center;
+                border: none;
+                border-radius: 5px;
+                margin-top: 16px;
+                cursor: pointer;
+                text-decoration: none;
+            }
+            .button:hover {
+                background-color: #0056b3;
+            }
+            .heading {
+                text-align: center;
+                margin-left: 40px;
+            }
+            .statistics-item:nth-child(1) {
+                margin-top: 20px; 
+            }
+            .statistics-item:nth-child(2) {
+                margin-top: -30px; /* Raise the 2nd item */
+            }
+            .statistics-item:nth-child(3) {
+                margin-top: 20px;
+            } 
+            .social-media {
+                display: flex;
+                flex-wrap: wrap; /* Allow columns to wrap */
+                justify-content: center; /* Center columns horizontally */
+                align-items: center;
+                background-color: #f1f2f5;
+                width: 100%;
+                padding: 20px; /* Adjust padding if needed */
+                box-sizing: border-box; /* Ensure padding doesn't cause overflow */
+                margin-top: 100px;
+                margin-bottom: 100px;
+            }
+            .title {
+                width: 100%;
+                font-size: 40px;
+                font-weight: bold; 
+                text-align: center; 
+                margin-bottom: 20px;
+            }
+            .column {
+                flex: 0 0 200px; /* Adjust this width if needed */
+                margin: 10px;
+            }
+            .column ul {
+                list-style: none;
+                padding: 0;
+            }
+            .column ul li {
+                display: flex;
+                align-items: center;
+                margin-bottom: 10px;
+                flex-wrap: wrap;
+            }
+            .column ul li a {
+                display: flex;
+                align-items: center;
+                text-decoration: none;
+                padding: 5px;
+                border-radius: 50px;
+                background-color: white;
+                border: 1px solid #ccc;
+                margin-right: 30px;
+                width: 160px;
+                height: 28px;
+            }
+            .column ul li a img {
+                width: 28px;
+                height: 28px;
+                margin-right: 10px;
+            }
+            .platform {
+                font-size: 20px;
+                font-weight: bold;
+                color: black;
+            }
+            .buttoney {
+                display: block;
+                background-color: rgb(1, 51, 1);
+                color: white;
+                padding: 5px;
+                text-align: center;
+                border: none;
+                border-radius: 5px;
+                margin-top: 25px;
+                cursor: pointer;
+                text-decoration: none;
+                width: 180px;
+                height: 20px;
+            }
+            .empowering section {
+                margin-top: 50px;
+                margin-bottom: 50px;
+                font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+                align-content: center;
+            }
+            footer {
+                background-color: darkgreen;
+                margin-top: 100px;
+            }
+            
+        </style>
+    </head>
+    <body>
+        
+        
+        
+        <div class="container">
+            <div class="item">HomePage</div>
+            <div class="item">
+                <img src="logo.png" alt="FinFuse Logo" class="logo">
+                FinFuse 
+            </div>
+            <div class="item">.04</div>
+        </div>
+    
+          
+        <header style="background-image: url('background-image.jpg'); background-size: cover; padding: 40px 20px; ">
+            <!-- Top Navigation Bar -->
+            <div class="top-nav" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+                <!-- Logo and Title -->
+                <div class="logo-title" style="display: flex; align-items: center; gap: 10px;">
+                    <img src="logo.png" alt="FinFuse Logo" style="width: 40px; height: 40px;">
+                    <h2>FinFuse</h2>
+                </div>
+                
+                <!-- Center Menu Links -->
+                <div class="nav-links" style="display: flex; gap: 20px;">
+                    <a href="#" style="color: #fff; text-decoration: none;">About Us</a>
+                    <a href="#" style="color: #fff; text-decoration: none;">FAQs</a>
+                    <div class="dropdown" style="position: relative;">
+                        <a href="#" style="color: #fff; text-decoration: none;">Features</a>
+                        <div class="dropdown-content" style="display: none; position: absolute; top: 20px; left: 0; background-color: #333; padding: 10px;">
+                            <a href="#" style="color: #fff; text-decoration: none;">Feature 1</a>
+                            <a href="#" style="color: #fff; text-decoration: none;">Feature 2</a>
+                            <a href="#" style="color: #fff; text-decoration: none;">Feature 3</a>
+                        </div>
+                    </div>
+                </div>
+        
+                <!-- Login & Signup Buttons -->
+                <div class="login-signup" style="display: flex; gap: 10px;">
+                    <button class="login-btn" style="padding: 10px 20px; background-color: #006400; color: #fff; border: none; border-radius: 5px;">Login</button>
+                    <button class="signup-btn" style="padding: 10px 20px; background-color: #006400; color: #fff; border: none; border-radius: 5px;">Sign Up</button>
+                </div>
+            </div>
+        
+            <!-- Header Main Content -->
+            <div class="header-container" style="display: flex; justify-content: space-between; align-items: flex-start;">
+                <!-- Left Text Content -->
+                <div class="header-content" style="max-width: 50%;">
+                    <h3 style="margin-bottom: 30px;">#1 Top Financial Banking Agency</h3>
+                    <h2 style="margin-bottom: 50px;">Your secure and <span style="color: yellow;">trusted</span> financial advisor</h2>
+                    <p style="margin-bottom: 40px; font-weight: bold ; font-size: 18px;">At FinFuse, we provide innovative and personalized financial solutions to help you achieve your financial goals. Whether it's managing investments, planning for retirement, or saving for the future, we've got you covered with expert guidance and support.</p>
+                    <button class="get-started-btn" style="padding: 10px 20px; background-color: yellow; color: #fff; border: none; border-radius: 5px; margin-right: 10px;">Get Started</button>
+                    <button class="watch-features-btn" style="padding: 10px 20px; background-color: #006400; color: #fff; border: none; border-radius: 5px; font-size: 18px; font-weight: bold;">Watch Our Features</button>
+                </div>
+        
+                <!-- Right Side Image with Overlay Box -->
+                <div class="header-image" style="position: relative; max-width: 40%;">
+                    <img src="header.jpg" alt="Financial Security" style="width: 80%; border-radius: 10px;">
+                    <div style="position: absolute; bottom: 20px; left: 20px; background-color: rgba(255, 255, 255, 0.8); padding: 20px; border-radius: 5px; width: calc(100% - 40px);">
+                        <h4 style="margin-top: 0; color: black;">Income</h4>
+                        <h6 style="color: black; font-size: large;">$30,999 <sup style="color: green;">10%</sup></h6>
+                        <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 10px;">
+                            <!-- Client 1 -->
+                            <div style="display: flex; flex-direction: column; align-items: center;">
+                                <img src="Client1.jpg" alt="Client 1" style="width: 50px; height: 50px; border-radius: 50%; margin-bottom: 5px;">
+                                <p style="margin: 0; color: black; font-weight: bold;" >$566</p>
+                                <small style="color: black; font-weight: bold;">Cane Poe</small>
+                            </div>
+                            <!-- Client 2 -->
+                            <div style="display: flex; flex-direction: column; align-items: center;">
+                                <img src="Client2.jpg" alt="Client 2" style="width: 50px; height: 50px; border-radius: 50%; margin-bottom: 5px;">
+                                <p style="margin: 0; color: black; font-weight: bold;">$678</p>
+                                <small style="color: black; font-weight: bold;">John Smith</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        
+            <!-- Lower Section with White Background -->
+            <div style="background-color: #fff; padding: 20px; margin-top: 20px; display: flex; justify-content: space-between; align-items: center;">
+                <!-- Left Text Content -->
+                <div>
+                    <h6 style="margin: 0; color: #333; font-size: 25px;">FINANCIAL EVOLUTION: THE FINFUSE STORY</h6>
+                </div>
+                
+                <!-- Right Content with Button and Link -->
+                <div style="text-align: right; max-width: 60%;">
+                    <p style="margin: 0; color: black;">Our day-to-day goal is to provide financial security, simplify money management, and build strong financial futures. Explore our approach to financial empowerment and discover what makes FinFuse different.</p>
+                    <div style="display: flex; align-items: center; margin-top: 10px;">
+                        <div style="width: 30px; height: 30px; background-color: #006400; border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+                            <span style="color: #fff;">→</span>
+                        </div>
+                        <a href="#" style="margin-left: 10px; color: #006400; text-decoration: none; font-weight: bold;">Discover More</a>
+                    </div>
+                </div>
+            </div>
+        </header>
+             
+              
+        
+         
+        <!-- Statistics Section -->
+        <div class="statistics-section">
+            <div class="statistics-item">
+                <h2 class="heading">5.65%</h2>
+                <div class="statistics-box">
+                    <a href="#" class="top-button">Secure Savings</a> 
+                    <div class="create-account">
+                        <p class="description">Provide robust security measures to safeguard your hard-earned savings.</p>
+                        <a href="#" class="button">Create account</a>
+                    </div>
+                </div>
+            </div>
+            <div class="statistics-item"> 
+                <h2 class="heading">7.66%</h2> 
+                <div class="statistics-box">
+                    <a href="#" class="top-button">Invest</a>
+                    <div class="create-account">
+                        <p class="description">Guiding you to make smart investment choices for a secure future.</p>
+                        <a href="#" class="button">Access account</a>
+                    </div>
+                </div>
+            </div>
+            <div class="statistics-item">
+                <h2 class="heading">6.99%</h2>
+                <div class="statistics-box">
+                    <a href="#" class="top-button">Real-time fraud</a> 
+                    <div class="create-account">
+                        <p class="description">Real-time fraud detection & prevention to safeguard your financial assets.</p>
+                        <a href="#" class="button">Transactions</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+     
+        <!-- Social Media Section -->
+        <section class="social-media">
+            <h2 class="title">JOINING FORCES WITH OUR DIVERSE NETWORK</h2>
+            <div class="column">
+                <ul>
+                    <li>
+                        <a href="https://m.facebook.com/FinFuse">
+                            <img src="Facebook.png" alt="Facebook">
+                            <p class="platform">Facebook</p>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="column">
+                <ul>
+                    <li>
+                        <a href="https://www.pinterest.com/FinFuse">
+                            <img src="Pinterest.png" alt="Pinterest">
+                            <p class="platform">Pinterest</p>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="column">
+                <ul>
+                    <li>
+                        <a href="https://www.instagram.com/FinFuse">
+                            <img src="instagram.jpg" alt="Instagram">
+                            <p class="platform">Instagram</p>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="column">
+                <ul>
+                    <li>
+                        <a href="https://ke.linkedin.com/FinFuse">
+                            <img src="Linkedin.png" alt="Linkedin">
+                            <p class="platform">Linkedin</p>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="column">
+                <ul>
+                    <li>
+                        <a href="https://www.reddit.com/FinFuse">
+                            <img src="Reddit.png" alt="Reddit">
+                            <p class="platform">Reddit</p>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+          
+            <div class="column">
+                <ul>
+                    <li>
+                        <a href="https://www.whatsapp.com/FinFuse">
+                            <img src="Whatsapp.png" alt="Whatsapp">
+                            <p class="platform">Whatsapp</p>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="column">
+                <ul>
+                    <li>
+                        <a href="https://www.snapchat.com/FinFuse">
+                            <img src="Snapchat.jpg" alt="Snapchat">
+                            <p class="platform">Snapchat</p>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="column">
+                <ul>
+                    <li>
+                        <a href="https://web.telegram.org/k/FinFuse">
+                        <img src="Telegram.png" alt="Telegram">
+                        <p class="platform">Telegram</p>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            
+               <div class="column">
+               <ul>
+                   <li>
+                    <a href="http://dribbble.com/FinFuse">
+                       <img src="Dribbble.png" alt="Dribbble">
+                       <p class="platform">Dribbble</p>
+                   </a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="column">
+                <ul>
+                    <li>
+                        <a href="https:www.vimeo.com/FinFuse">
+                        <img src="Vimeo.png" alt="Vimeo">
+                        <p class="platform">Vimeo</p>
+                    </a>
+                    </li>
+                </ul>
+            </div>
+    
+            <div class="column">
+                <ul>
+                    <li>
+                        <a href="https://gitlab.com/users/sign_in/FinFuse">
+                        <img src="Gitlab.png" alt="Gitlab">
+                        <p class="platform">Gitlab</p>
+                    </a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="column">
+                <ul>
+                    <li>
+                        <a href="https:www.behance.net/FinFuse">
+                        <img src="Behance.png" alt="Behance">
+                        <p class="platform">Behance</p>
+                    </a>
+                    </li>
+                </ul>
+            </div>
+    
+            <div class="column">
+                <ul>
+                    <li>
+                       <a href="https://www.twitch.tv/FinFuse">
+                        <img src="Twitch.png" alt="Twitch">
+                        <p class="platform">Twitch</p>
+                    </a>
+                    </li>
+                </ul>
+            </div>
+    
+        </section>
+
+      <!-- Empowering Section -->
+<section class="empowering section" style="text-align: center;">
+    <div>
+        <h2 style="margin-bottom: 20px;">EMPOWERING YOUR FINANCIAL FUTURE</h2>
+        <p style="margin-bottom: 60px;">Your Trusted Partner in Financial Innovation - Simplify Your Finances, Maximize Your Potential, and Secure Your Future.</p>
+    </div>
+
+    <div class="topone" style="margin-bottom: 40px;">
+        <div style="display: inline-block; width: 700px; height: 500px; margin-right: 40px;">
+            <img src="people-at-the-office.jpg" alt="Office discussion" style="width: 100%; height: 100%;">
+        </div>
+
+        <div style="display: inline-block; background-color: #eeecec; width: 250px; height: 500px; padding: 30px; border: 1px solid #ccc; vertical-align: top; box-sizing: border-box;">
+            <h6>FINTECH</h6>
+            <h2>FINTECH SOLUTIONS FOR YOU</h2>
+            <p>Discover tailored fintech solutions for every aspect of your financial journey - from budgeting and investing to retirement planning and beyond.</p>
+            <a href="#" class="buttoney">Open an account</a>
+        </div>
+    </div>
+
+    <div class="bottomone" style="clear: both; margin-top: 20px;">
+        <div style="display: inline-block; background-color: #eeecec; width: 250px; height: 500px; padding: 30px; border: 1px solid #ccc; vertical-align: top; box-sizing: border-box;">
+            <h6 >EMPOWERING</h6>
+            <h2>EMPOWERING YOUR FINANCIAL JOURNEY</h2>
+            <p>Your comprehensive fintech partner, offering innovative tools and expert guidance to optimize your financial strategy and achieve your goals.</p>
+            <a href="#" class="buttoney">Open an account</a>
+        </div>
+
+        <div style="display: inline-block; width: 600px; height: 200px; margin-left: 40px;">
+            <img src="trading-photo.jpg" alt="Trading photo" style="width: 700px; height: 500px;">
+        </div>
+    </div>
+</section>
+  
+<!-- New Section with Light Grey Background -->
+<section style="background-color: #f0f0f0; padding: 40px; text-align: center; margin-top: 100px;">
+    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 40px;">
+        <!-- Top Left: Heading -->
+        <h2 style="text-align: left; margin: 0;">HOW FINFUSE WORKS TO SERVE YOU BETTER.</h2>
+        
+        <!-- Top Right: Paragraph -->
+        <p style="text-align: right; max-width: 50%; margin: 0;">
+           We pave way for tommorow's financial frontier by seamlessly intergratin innovasion,accesibility and trust,crafting solutions that empowers individual crafting solutions.
+        </p>
+    </div>
+
+    <div style="display: flex; justify-content: center; align-items: center; gap: 20px;">
+        <!-- Bottom Left: Image -->
+        <div style="width: 45%;">
+            <img src="financial-image.jpg" alt="Financial concept image" style="width: 100%; height: auto; border-radius: 5px;">
+        </div>
+
+        <!-- Bottom Right: Video -->
+        <div style="width: 45%;">
+            <video controls style="width: 100%; height: auto; border-radius: 5px;">
+                <source src="financial-video.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+    </div>
+</section>
+
+<!-- Customer Reviews Section -->
+<section style="background-color: #f9f9f9; padding: 40px; text-align: center; margin-top: 100px;">
+    <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 40px;">
+        <!-- Top Left: Heading -->
+        <h2 style="text-align: left; margin: 0; max-width: 45%;">What Our Customers Say About Us</h2>
+        
+        <!-- Top Right: Paragraph and Button -->
+        <div style="text-align: right; max-width: 45%;">
+            <p style="margin: 0;">
+                Our customers love the financial freedom and peace of mind our services provide. Discover what they have to say about their experiences.
+            </p>
+            <a href="#" style="display: inline-block; margin-top: 10px; padding: 10px 20px; background-color: #006400; color: #fff; text-decoration: none; border-radius: 5px;">See More Reviews</a>
+        </div>
+    </div>
+
+    <!-- Customer Reviews -->
+    <div style="display: flex; justify-content: center; align-items: flex-start; gap: 20px; flex-wrap: wrap;">
+        <!-- Left Review Box -->
+        <div style="background-color: #eeecec; width: 250px; padding: 15px; border-radius: 5px; display: flex; flex-direction: column; align-items: flex-start; height: 300px;">
+            <div style="display: flex; align-items: center; margin-bottom: 10px;">
+                <img src="customer1.jpg" alt="Customer Photo" style="width: 40px; height: 40px; border-radius: 50%; margin-right: 10px;">
+                <strong>Jane Doe</strong>
+            </div>
+            <p>"This service has been a game-changer for managing my finances. I feel more in control and confident about my future."</p>
+        </div>
+
+        <!-- Center: Two Shorter Review Boxes (Stacked) -->
+        <div style="display: flex; flex-direction: column; gap: 10px;">
+            <!-- Top Center Short Review Box -->
+            <div style="background-color: #eeecec; width: 250px; padding: 15px; border-radius: 5px; display: flex; flex-direction: column; align-items: flex-start; height: 140px;">
+                <div style="display: flex; align-items: center; margin-bottom: 10px;">
+                    <img src="customer2.jpg" alt="Customer Photo" style="width: 40px; height: 40px; border-radius: 50%; margin-right: 10px;">
+                    <strong>John Smith</strong>
+                </div>
+                <p>"The tools and support have been excellent."</p>
+            </div>
+
+            <!-- Bottom Center Short Review Box -->
+            <div style="background-color: #eeecec; width: 250px; padding: 15px; border-radius: 5px; display: flex; flex-direction: column; align-items: flex-start; height: 140px;">
+                <div style="display: flex; align-items: center; margin-bottom: 10px;">
+                    <img src="customer3.jpg" alt="Customer Photo" style="width: 40px; height: 40px; border-radius: 50%; margin-right: 10px;">
+                    <strong>Emily Clark</strong>
+                </div>
+                <p>"I never thought managing my budget could be this easy."</p>
+            </div>
+        </div>
+
+        <!-- Right Review Box -->
+        <div style="background-color: #eeecec; width: 250px; padding: 15px; border-radius: 5px; display: flex; flex-direction: column; align-items: flex-start; height: 300px;">
+            <div style="display: flex; align-items: center; margin-bottom: 10px;">
+                <img src="customer4.jpg" alt="Customer Photo" style="width: 40px; height: 40px; border-radius: 50%; margin-right: 10px;">
+                <strong>Michael Brown</strong>
+            </div>
+            <p>"Reliable and easy to use. I've been able to track my spending and save more money each month."</p>
+        </div>
+    </div>
+</section>
+
+  
+<!-- FAQ Section -->
+<section style="background-color: #f9f9f9; padding: 40px; text-align: center; margin-top: 100px;">
+    <!-- Top Content: Title and Paragraph -->
+    <h2 style="text-align: center; margin-bottom: 22px;">Frequently Asked Questions</h2>
+    <p style="max-width: 70%; margin: 0 auto; margin-bottom: 50px;">
+        Navigating common queries about our services, account setup, and more. Get answers to frequently asked questions to help you understand how FinFuse works.
+    </p>
+
+    <div style="display: flex; justify-content: center; align-items: flex-start; gap: 20px;">
+        <!-- Left Green Box with Main Question and Answer -->
+        <div style="background-color: #006400; color: #ffffff; width: 300px; padding: 20px; border-radius: 5px; text-align: left;">
+            <h4 style="margin-top: 0;">How do I open an account with FinFuse?</h4>
+            <hr style="border: 0; border-top: 1px solid #ffffff; margin: 15px 0;">
+            <p>Opening an account with FinFuse is easy. Simply visit our website, click on 'Open an Account,' and follow the guided steps. You’ll need your identification and some personal information ready to get started.</p>
+        </div>
+    
+        <!-- Right Columns with FAQ Boxes -->
+        <div style="display: flex; gap: 20px;">
+            <!-- First Column of 4 FAQ Boxes -->
+            <div style="display: flex; flex-direction: column; gap: 10px;">
+                <div style="background-color: #ffffff; width: 280px; padding: 15px; border-radius: 5px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); cursor: pointer;" onclick="toggleAnswer(1)">
+                    <div style="display: flex; justify-content: space-between; align-items: center;">
+                        <p style="margin: 0; font-weight: bold;">What documents do I need?</p>
+                        <span style="font-weight: bold; font-size: 18px;">+</span>
+                    </div>
+                    <div id="answer1" style="display: none; margin-top: 10px;">
+                        <p>You'll need a valid ID, proof of address, and contact information.</p>
+                    </div>
+                </div>
+    
+                <div style="background-color: #ffffff; width: 280px; padding: 15px; border-radius: 5px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); cursor: pointer;" onclick="toggleAnswer(2)">
+                    <div style="display: flex; justify-content: space-between; align-items: center;">
+                        <p style="margin: 0; font-weight: bold;">Is there a fee to open an account?</p>
+                        <span style="font-weight: bold; font-size: 18px;">+</span>
+                    </div>
+                    <div id="answer2" style="display: none; margin-top: 10px;">
+                        <p>No, opening an account is free of charge.</p>
+                    </div>
+                </div>
+    
+                <div style="background-color: #ffffff; width: 280px; padding: 15px; border-radius: 5px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); cursor: pointer;" onclick="toggleAnswer(3)">
+                    <div style="display: flex; justify-content: space-between; align-items: center;">
+                        <p style="margin: 0; font-weight: bold;">Can I manage multiple accounts?</p>
+                        <span style="font-weight: bold; font-size: 18px;">+</span>
+                    </div>
+                    <div id="answer3" style="display: none; margin-top: 10px;">
+                        <p>Yes, our platform allows you to manage multiple accounts from a single dashboard.</p>
+                    </div>
+                </div>
+    
+                <div style="background-color: #ffffff; width: 280px; padding: 15px; border-radius: 5px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); cursor: pointer;" onclick="toggleAnswer(4)">
+                    <div style="display: flex; justify-content: space-between; align-items: center;">
+                        <p style="margin: 0; font-weight: bold;">How do I reset my password?</p>
+                        <span style="font-weight: bold; font-size: 18px;">+</span>
+                    </div>
+                    <div id="answer4" style="display: none; margin-top: 10px;">
+                        <p>You can reset your password by clicking 'Forgot Password' on the login page.</p>
+                    </div>
+                </div>
+            </div>
+    
+            <!-- Second Column of 3 FAQ Boxes -->
+            <div style="display: flex; flex-direction: column; gap: 10px;">
+                <div style="background-color: #ffffff; width: 280px; padding: 15px; border-radius: 5px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); cursor: pointer;" onclick="toggleAnswer(5)">
+                    <div style="display: flex; justify-content: space-between; align-items: center;">
+                        <p style="margin: 0; font-weight: bold;">Can I upgrade my account?</p>
+                        <span style="font-weight: bold; font-size: 18px;">+</span>
+                    </div>
+                    <div id="answer5" style="display: none; margin-top: 10px;">
+                        <p>Yes, you can upgrade your account through the account settings.</p>
+                    </div>
+                </div>
+    
+                <div style="background-color: #ffffff; width: 280px; padding: 15px; border-radius: 5px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); cursor: pointer;" onclick="toggleAnswer(6)">
+                    <div style="display: flex; justify-content: space-between; align-items: center;">
+                        <p style="margin: 0; font-weight: bold;">Where can I find tutorials?</p>
+                        <span style="font-weight: bold; font-size: 18px;">+</span>
+                    </div>
+                    <div id="answer6" style="display: none; margin-top: 10px;">
+                        <p>Our tutorials can be found in the Help section of your account dashboard.</p>
+                    </div>
+                </div>
+    
+                <div style="background-color: #ffffff; width: 280px; padding: 15px; border-radius: 5px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); cursor: pointer;" onclick="toggleAnswer(7)">
+                    <div style="display: flex; justify-content: space-between; align-items: center;">
+                        <p style="margin: 0; font-weight: bold;">Can I link external accounts?</p>
+                        <span style="font-weight: bold; font-size: 18px;">+</span>
+                    </div>
+                    <div id="answer7" style="display: none; margin-top: 10px;">
+                        <p>Yes, you can link your external accounts to view all your finances in one place.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- JavaScript to Toggle Answer Visibility -->
+    <script>
+        function toggleAnswer(id) {
+            const answer = document.getElementById('answer' + id);
+            if (answer.style.display === 'none' || answer.style.display === '') {
+                answer.style.display = 'block';
+            } else {
+                answer.style.display = 'none';
+            }
+        }
+    </script>
+       
+        
+
+<!-- Footer Section -->
+<footer style="padding: 40px; color: #ffffff; text-align: left; background-size: cover; background-position: center;">
+    <!-- Convincing Message at Top Left -->
+    <h2 style="margin-top: 0; margin-bottom: 30px;">Join FinFuse Today and Secure Your Financial Future</h2>
+
+    <!-- Contact Information Row -->
+    <div style="display: flex; align-items: center; margin-top: 20px;">
+        <!-- Location with Icon -->
+        <div style="display: flex; align-items: center; margin-right: 40px; margin-bottom: 50px;">
+            <img src="location-icon.png" alt="Location" style="width: 20px; height: 20px; margin-right: 10px;">
+            <p style="margin: 0;">123 Finance Street, FinCity</p>
+        </div>
+
+        <!-- Email Address with Icon -->
+        <div style="display: flex; align-items: center; margin-bottom: 50px;">
+            <img src="email-icon.png" alt="Email" style="width: 20px; height: 20px; margin-right: 10px;">
+            <p style="margin: 0;">contact@finfuse.com</p>
+        </div>
+    </div>
+
+    <!-- Bottom Divider Line -->
+    <hr style="border: 0; border-top: 1px solid #ffffff; margin: 40px 0;">
+
+    <!-- Bottom Left: All Rights Reserved -->
+    <div style="text-align: left;">
+        <p style="margin: 0;">All rights reserved by WolfPixel</p>
+        <p style="float: right; margin-right: 20px; ">Privacy Policy  </p>
+        <p style="float: left; margin-left: 1200px; "> Terms & Conditions  </p>
+    </div>
+</footer>
+   
+
+
+
+
+
+</body>
+</html>
